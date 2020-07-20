@@ -14,8 +14,8 @@ typedef struct opt
 	char *str;
 	int (*arg)();
 
-}oprions;
+}options;
 
-int print_principal(int c);
+int print_printf(int c);
 
 #endif
