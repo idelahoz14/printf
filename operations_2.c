@@ -28,7 +28,7 @@ int print_number(va_list valist)
 	char *str;
 
 	p = va_arg(valist, int);
-	str = _itoa(n, 10);
+	str = _itoa(p, 10);
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
