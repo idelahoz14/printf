@@ -28,6 +28,21 @@ if (*format == '%')
 		p = print_s(valist);
 		format++;
 		break;
+
+		case '%':
+		p = print_percentage();
+		format++;
+		break;
+
+		case 'd':
+		p = print_number(valist);
+		format++;
+		break;
+
+		case 'i':
+		p = print_number(valist);
+		format++;
+		break;
 	}
 	}
 	else
