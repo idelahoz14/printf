@@ -17,5 +17,6 @@ typedef struct opt
 }options;
 
 int print_printf(int c);
+char *_itoa(long int num, int base);
 
 #endif
