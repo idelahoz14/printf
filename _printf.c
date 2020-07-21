@@ -35,5 +35,5 @@ if (*format == '%')
 			write(1, &(*format++), 1);
 	}
 }
-return (0);
+return (p);
 }
