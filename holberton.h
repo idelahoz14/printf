@@ -16,10 +16,12 @@ typedef struct opt
 
 }options;
 
-int  print_c(va_list valist);
+int print_c(va_list valist);
 int print_s(va_list valist);
+int print_number(va_list valist);
+int print_percentage(void);
 
-int print_printf(int c);
+int print_show(int c);
 char *_itoa(long int num, int base);
 
 #endif
