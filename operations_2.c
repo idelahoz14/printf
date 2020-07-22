@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- * print_number - print decimal int
+ * print_d_i - print decimal int
  * @valist: argument
  * Return: i
  */
