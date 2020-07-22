@@ -16,34 +16,33 @@ va_start(valist, format);
 while (format != NULL && *format != '\0')
 {
 	if (*format == '%')
-	{
-	format++;
-	switch (format[i])
-	{
-		case 'c':
-		print_c(valist);
-		format++;
-		break;
-		case 's':
-		print_s(valist);
-		format++;
-		break;
-		case '%':
-		print_percentage();
-		format++;
-		break;
-		case 'd':
-		print_number(valist);
-		format++;
-		break;
-		case 'i':
-		print_number(valist);
-		format++;
-		break;
-	}
-}	else
+	{	format++;
+		switch (format[i])
+		{	case 'c':
+			print_c(valist);
+			format++;
+			break;
+			case 's':
+			print_s(valist);
+			format++;
+			break;
+			case '%':
+			print_percentage();
+			format++;
+			break;
+			case 'd':
+			print_number(valist);
+			format++;
+			break;
+			case 'i':
+			print_number(valist);
+			format++;
+			break; }
+		}
+	else
 	{ write(1, &(*format++), 1);
 	}
 	counter++;
+	va_end(valist);
 } return (counter);
 }
