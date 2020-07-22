@@ -7,33 +7,43 @@
 int _printf(const char *format, ...)
 {
 int i = 0;
-int p;
+int counter = 0;
 va_list valist;
+if (veri(format) == 0)
+{ return (-1); }
 
 va_start(valist, format);
 while (format != NULL && *format != '\0')
 {
-if (*format == '%')
+	if (*format == '%')
 	{
 	format++;
-
 	switch (format[i])
 	{
 		case 'c':
-		p = print_c(valist);
+		print_c(valist);
 		format++;
 		break;
-
 		case 's':
-		p = print_s(valist);
+		print_s(valist);
+		format++;
+		break;
+		case '%':
+		print_percentage();
+		format++;
+		break;
+		case 'd':
+		print_number(valist);
+		format++;
+		break;
+		case 'i':
+		print_number(valist);
 		format++;
 		break;
 	}
+}	else
+	{ write(1, &(*format++), 1);
 	}
-	else
-	{
-			write(1, &(*format++), 1);
-	}
-}
-return (p);
+	counter++;
+} return (counter);
 }
