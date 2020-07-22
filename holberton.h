@@ -15,7 +15,7 @@ typedef struct opt
 	int (*arg)();
 
 }options;
-
+int veri(const char *format);
 int print_c(va_list valist);
 int print_s(va_list valist);
 int print_number(va_list valist);
