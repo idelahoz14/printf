@@ -1,33 +1,49 @@
 #include "holberton.h"
 /**
-* print_c - characters
-* @valist: list
-* Return: it return stdout
+* print_show - It prints to stdout.
+* @c: Char to print.
+* Return: It returns to stdout.
 */
-int  print_c(va_list valist)
+int print_show(int c)
 {
-		int c = va_arg(valist, int);
-			write(1, &(c), 1);
-		return (1);
+	return (write(1, &c, 1));
 }
 /**
-* print_s - characters
-* @valist: list
-* Return: it return stdout
+* print_c - It prints to stdout.
+* @valist: List.
+* Return: It returns to stdout.
+*/
+int print_c(va_list valist)
+{
+		return (print_show(va_arg(valist, int)));
+}
+/**
+* print_percentage - It prints to stdout.
+* Return: It returns to stdout.
+*/
+int print_percentage(void)
+{
+			print_show('%');
+			return (1);
+}
+/**
+* print_s - It prints to stdout.
+* @valist: List.
+* Return: It returns to stdout.
 */
 int print_s(va_list valist)
 {
-	int counter = 0;
-	char *s = va_arg(valist, char *);
+char *str;
+int i;
 
-	if (!s)
+	str = va_arg(valist, char *);
+	if (str == NULL)
 	{
-		s = "(null)";
+		str = "(null)";
 	}
-	while (*s)
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		write(1, &(*s++), 1);
-		counter++;
+		print_show(str[i]);
 	}
-	return (counter);
-}
+	return (i);
+	}
