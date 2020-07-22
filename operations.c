@@ -20,6 +20,10 @@ int print_s(va_list valist)
 	int counter = 0;
 	char *s = va_arg(valist, char *);
 
+	if (!s)
+	{
+		s = "(null)";
+	}
 	while (*s)
 	{
 		write(1, &(*s++), 1);
