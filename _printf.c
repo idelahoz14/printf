@@ -10,7 +10,7 @@ int i = 0;
 int counter = 0;
 va_list valist;
 if (veri(format) == 0)
-{ return (-1);}
+{ return (-1); }
 
 va_start(valist, format);
 while (format != NULL && *format != '\0')
