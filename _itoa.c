@@ -12,6 +12,7 @@ char *_itoa(long int num, int base)
 	char sign = 0;
 	char *ptr;
 	unsigned long n = num;
+
 	if (num < 0)
 	{
 		n = -num;
@@ -19,10 +20,12 @@ char *_itoa(long int num, int base)
 	}
 	ptr = &buffer[49];
 	*ptr = '\0';
-	do   {
+
+	do      {
 		*--ptr = array[n % base];
 		n /= base;
 	} while (n != 0);
+
 	if (sign)
 		*--ptr = sign;
 	return (ptr);

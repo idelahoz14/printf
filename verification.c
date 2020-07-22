@@ -1,15 +1,47 @@
 #include "holberton.h"
-#include <stdarg.h>
 /**
-* veri - check if the input is correct
-* @format: the pointer
-* Return: 0 always
-*/
-int veri(const char *format)
+ * revision - checks type of operation to be used
+ * @format: first argument passed by user
+ * @valist: variadic function
+ * @ops: checker struct
+ * Return: int/count
+ */
+int revision(const char *format, va_list valist, struct op ops[])
 {
-	if (format == NULL)
-	{return(0); }
-	if (format[0] == '%' && format[1] == '\0')
-		{return (0); }
-	return (1);
+	int i = 0, j = 0, count = 0;
+
+	while (format != NULL && format[i] != 0)
+	{
+		if (format[i] != '%' && format[i] != 0)
+		{
+			count += print_show(format[i]);
+		}
+		else if (format[i] == '%')
+		{
+			while (j < 10)
+			{
+				if (format[i + 1] == ops[j].ptr[1])
+				{
+					count += ops[j].s(valist);
+					i++;
+					break;
+				}
+				if (j == 9 && format[i + 1] != ops[j].ptr[1])
+				{
+					if (!format[i + 1])
+					{
+						return (-1);
+					}
+					else
+					{
+						count += print_show(format[i]);
+					}
+				}
+				j++;
+			}
+		}
+		i++;
+		j = 0;
+	}
+	return (count);
 }
