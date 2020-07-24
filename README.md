@@ -8,7 +8,7 @@
   We can compile the our own printf project by
   do the following command:
 
-  *gcc -Wall -Werror -Wextra -pedantic * . c
+  * gcc -Wall -Werror -Wextra -pedantic * . c
 
   We can show the following operations:
   * (%c) -> Print the corresponding ASCII character.
