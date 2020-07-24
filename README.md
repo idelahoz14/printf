@@ -18,9 +18,9 @@
 
 # Example
 
-  *printf("Let's try to printf a simple sentence.\n");
-   *Let's try to printf a simple sentence.
-  *printf("Length:[%d, %i]\n", 39, 39);
-   *Length:[39, 39]
-  *printf("String:[%s]\n", "I am a string !");
-   *String:[I am a string !]
+  * printf("Let's try to printf a simple sentence.\n");
+   * Let's try to printf a simple sentence.
+  * printf("Length:[%d, %i]\n", 39, 39);
+   * Length:[39, 39]
+  * printf("String:[%s]\n", "I am a string !");
+   * String:[I am a string !]
